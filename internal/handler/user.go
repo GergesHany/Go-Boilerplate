@@ -9,12 +9,13 @@ import (
 // LoginCheckHandler responds with "user logged in successfully" when a POST request is made to /login.
 func LoginCheckHandler(w http.ResponseWriter, r *http.Request) {
 
+	// Check if the request method is POST
 	if r.Method != http.MethodPost {
-		// fmt.Fprintf(w, "Method not allowed")
-		// fmt.Fprintf(w, "Method not allowed")
-		helpers.RespondWithError(w, http.StatusMethodNotAllowed, "method not allowed")
-		return
+			// fmt.Fprintf(w, "Method not allowed")
+			// fmt.Fprintf(w, "Method not allowed")
+			helpers.RespondWithError(w, http.StatusMethodNotAllowed, "method not allowed")
+			return
 	}
 
-	log.Printf("Login check successful")
+			log.Printf("Login check successful")
 }
