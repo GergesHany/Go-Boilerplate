@@ -1,11 +1,11 @@
 package main
 
 import (
-    "log"
+	"log"
 
-    "github.com/joho/godotenv"
-    "Go-Boilerplate/internal/config"
-    "Go-Boilerplate/internal/server"
+	"Go-Boilerplate/internal/config"
+	"Go-Boilerplate/internal/server"
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -15,12 +15,12 @@ func main() {
 		log.Println("No .env file found at ../../.env")
 	}
 
-    // Load application configuration.
-    cfg := config.LoadConfig()
+	// Load application configuration.
+	cfg := config.LoadConfig()
 
-    // Initialize and start the server.
-    srv := server.NewServer(cfg)
-    if err := srv.Start(); err != nil {
-        log.Fatalf("server failed: %v", err)
-    }
+	// Initialize and start the server.
+	srv := server.NewServer(cfg)
+	if err := srv.Start(); err != nil {
+		log.Fatalf("server failed: %v", err)
+	}
 }
